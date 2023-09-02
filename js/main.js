@@ -3,10 +3,12 @@ const boton = document.querySelector(".buscar");
 const resultado = document.querySelector(".resultado");
 
 const apiKey = "1lnZj6zhoFpnAGgplWyHlUFLL1HCA7m5"; 
-const url =`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${buscador.value}&limit=9`;
+
 
 
 boton.addEventListener("click", ()=> {
+    resultado.innerHTML = "";
+    const url =`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${buscador.value}&limit=9`;
     const peticion = fetch(url);
     peticion 
     .then((response)=>{
